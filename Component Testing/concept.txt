@@ -1,0 +1,30 @@
+# Unit Testing:
+    - Component Testing
+    - Funtional Testing
+
+- Component Testing: Component testing involves testing Vue components in isolation to ensure their individual behavior is correct. It focuses on verifying the functionality and output of a single component, typically without considering its child components or external dependencies.
+
+- Test Runner: A test runner is a tool or framework that executes tests and provides various features for running and organizing tests, such as executing test suites, generating test reports, and handling test configurations. Popular test runners for Vue.js include Jest, Mocha, and Karma.
+
+- Assertion Library:
+
+- Test Fixture: A test fixture refers to the setup or environment in which a test case is executed. In the context of component testing, the test fixture includes the component being tested, its props or data, and any necessary mock data or dependencies.
+
+- Mocking: Mocking involves creating dummy implementations or replacements for external dependencies, such as APIs, services, or child components, in order to isolate the component being tested. Mocking allows you to control the behavior and responses of these dependencies during testing.
+
+- Assertions: Assertions are statements or conditions that check whether a certain condition or expectation holds true during a test. They are used to validate the behavior and output of the component being tested. Common assertion libraries used in Vue.js testing include Jest's expect and Chai's assertion library.
+
+- Mounting: Mounting refers to the process of rendering a component and its child components in a test environment. It sets up the component hierarchy and makes it available for testing. In Vue, this is typically done using mounting functions provided by testing libraries like Vue Test Utils.
+
+- Shallow mounting means that only the component being tested is rendered, and its child components are replaced with stubs (dummy components). This allows you to isolate the component under test and focus on its behavior without considering the implementation details of its child components.
+
+- Snapshot Testing:
+
+# Test doubles: In the context of component testing, "test doubles" are objects or implementations used as replacements for real dependencies of a component during testing. Test doubles mimic the behavior of the real dependencies but allow for more control and isolation in the testing environment.
+    - Mocks
+    - Stubs
+    - Spies
+    - Fakes
+    
+
+- How to list and order the test cases for component test cases?

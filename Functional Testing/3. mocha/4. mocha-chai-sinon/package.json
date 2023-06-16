@@ -1,0 +1,24 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "this package is created for unit testing purpose",
+  "main": "index.js",
+  "scripts": {
+    "test1": "mocha './test/myClass/*.test.js'",
+    "test2": "mocha './test/myFunction/*.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not yet"
+  },
+  "keywords": [
+    "?"
+  ],
+  "author": "Amir Shrestha",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "sinon": "^15.0.0"
+  }
+}

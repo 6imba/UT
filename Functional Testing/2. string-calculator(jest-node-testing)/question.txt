@@ -1,0 +1,4 @@
+# error:
+    -  SyntaxError: Cannot use import statement outside a module
+
+- jest and esm module
