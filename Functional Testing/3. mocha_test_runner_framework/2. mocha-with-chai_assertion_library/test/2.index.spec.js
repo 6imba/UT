@@ -1,5 +1,6 @@
 const chai = require("chai"); // chai is a third-party-assertion-library.
-const { expect } = chai; //
+
+const { expect } = chai; 
 
 // # 1:
 describe("Array", function () {

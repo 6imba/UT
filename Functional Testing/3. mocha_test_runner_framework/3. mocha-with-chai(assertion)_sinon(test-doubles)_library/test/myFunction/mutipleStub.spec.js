@@ -1,7 +1,7 @@
 // const chai = require('chai');
 // const sinon = require('sinon');
 // const sinonChai = require('sinon-chai');
-// const { updateUser } = require('../../src/mutipleStub')
+// const { updateUser } = require('../../src/myFunction/mutipleStub')
 
 // chai.use(sinonChai);
 

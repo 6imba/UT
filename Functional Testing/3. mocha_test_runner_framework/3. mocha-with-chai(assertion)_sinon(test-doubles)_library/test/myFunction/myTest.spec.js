@@ -1,4 +1,4 @@
-const myModule = require('../../src/myCode');
+const myModule = require('../../src/myFunction/myCode');
 const sinon = require('sinon');
 // const chai = require('chai');
 const assert = require('assert');
