@@ -1,0 +1,21 @@
+set component option in
+    1. root ==> 
+        const v = tester({
+        component: ...,
+        options: ...,
+        store: ...
+        })
+
+    VS
+
+    2. inside ==>
+      v.set({
+        options: ...,
+        store: ...
+    })
+
+
+
+wrapper.vm.
+wrapper.findComponent()
+wrapper.exists()

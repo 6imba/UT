@@ -1,6 +1,6 @@
 const http = require('http')
 const qs = require('querystring')
-const calculator = require('./calculator')
+const calculator = require('./src/calculator')
 
 const server = http.createServer(function(request, response) {
     console.dir(request.param)

@@ -1,0 +1,41 @@
+# mocha: jest,ava
+    - test runner framework
+    - describe and it is a function provided by mocha.
+
+# assert: node built-in assertion module
+# chai : assertion library
+# sinon: assertion plus test doubles library
+
+------------------------------------------------------------------------------------------------------
+
+- mocha is a light-weight Node.js test framework
+- chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
+- BDD provides an expressive and readable style of language via Should & Expect, whereas TDD provides a more Classical approach via Assert.
+- Both Mocha and Chai run in NodeJs and the browser and allow asynchronous testing.
+
+# Terms:
+    - asynchronous testing
+
+# Reference:
+    - https://www.youtube.com/watch?v=M0UtmM1Rrpo&list=PLgbtO1Bcz4C-vU0JLfDBsZGbSUdNX4mQ8&index=2&ab_channel=SyalStudyZone
+    - https://www.browserstack.com/guide/unit-testing-for-nodejs-using-mocha-and-chai
+    - https://mochajs.org/
+
+------------------------------------------------------------------------------------------------------
+
+describe("Test suite_1:", function(){
+    it("Case_1:", function(){
+        expect(1);
+    })
+    it("Case_2:", function(){
+        assert(1);
+    })
+    it("Case_3:", function(){
+        should(0);
+    })
+});
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- expect(1).to.be.equal(1);
+- expect(1).to.equal(1);
