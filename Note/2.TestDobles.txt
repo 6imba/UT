@@ -1,0 +1,16 @@
+# Test doubles:
+    - In the context of component testing, "test doubles" are objects or implementations used as replacements for real dependencies of a component during testing.
+    - Test doubles mimic|replace|simulate the behavior of the real dependencies but allow for more control and isolation in the testing environment.
+    - Mocks, Stubs, Spies, Fakes
+
+# Real dependencies:
+    - In the context of testing, "real dependencies" refer to the actual external components, services, or modules that a unit under test interacts with
+    - These dependencies are typically implemented separately and are not part of the unit being tested.
+    - Real dependencies of a component ==> Database access components, Web service APIs, File system interactions, Network communication modules, External libraries or frameworks, Hardware devices
+
+# Real dependencies in case of Vue:
+    - Brpwser APIs: fetch api, Geolocation API, localStorage, sessionStorage, DOM 
+    - Vue Plugins: Vue i18n, Vue Router, Vuex Store, Vue Select
+    - External libraries: Axios, Moment.js, loadash, charting libraries, date pickers, rich text editors
+    - Custome Servies or Utiities: api servies, validation servies,
+

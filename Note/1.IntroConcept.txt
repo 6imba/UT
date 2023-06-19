@@ -1,0 +1,39 @@
+# Unit Testing:
+    - Component Testing
+    - Funtional Testing
+
+- Component Testing: Component testing involves testing Vue components in isolation to ensure their individual behavior is correct. It focuses on verifying the functionality and output of a single component, typically without considering its child components or external dependencies.
+
+# Test Runner:
+    - A test runner is a tool or framework that executes tests and provides various features for running and organizing tests, such as executing test suites, generating test reports, and handling test configurations.
+    - Popular test runners for Vue.js include Jest, Mocha, Ava, and Karma.
+
+- Assertion module: assert
+- Assertion library: chai
+- Doubles library: sinon
+
+# Test Fixture:
+    - A test fixture refers to the setup or environment in which a test case is executed.
+    - It includes the initialization of the component being tested and any other dependencies or resources required for the test case to run successfully.
+    - The test fixture ensures that the component is in a known state before the test case begins.
+    - In the context of component testing, the test fixture includes the component being tested, its props or data, and any necessary mock data or dependencies.
+
+# Test Suites:
+    - A test suite is a collection or group of test cases that are designed to be executed together.
+    - It consists of multiple related test cases that verify different aspects or functionalities of a component.
+    - Test suites are created to achieve comprehensive coverage of the component under test and to address various scenarios and conditions.
+
+# Test Cases:
+    - A test case is a specific set of input values, execution conditions, and expected results that are designed to validate a particular aspect or behavior of a component.
+    - It represents a single test scenario and typically focuses on testing a specific feature, function, or use case of the component.
+    - A test case consists of steps to be executed, input values to be provided, and the expected outcomes.
+
+- Assertions: Assertions are statements or conditions that check whether a certain condition or expectation holds true during a test. They are used to validate the behavior and output of the component being tested. Common assertion libraries used in Vue.js testing include Jest's expect and Chai's assertion library.
+
+- Mocking: Mocking involves creating dummy implementations or replacements for external dependencies, such as APIs, services, or child components, in order to isolate the component being tested. Mocking allows you to control the behavior and responses of these dependencies during testing.
+
+- Mounting: Mounting refers to the process of rendering a component and its child components in a test environment. It sets up the component hierarchy and makes it available for testing. In Vue, this is typically done using mounting functions provided by testing libraries like Vue Test Utils.
+
+- Shallow mounting means that only the component being tested is rendered, and its child components are replaced with stubs (dummy components). This allows you to isolate the component under test and focus on its behavior without considering the implementation details of its child components.
+
+- Snapshot Testing:

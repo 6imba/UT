@@ -1,0 +1,27 @@
+1. What comes first test fixture or test suite?
+    - test fixture
+
+    > The order of usage is typically as follows:
+        - Set up the test fixture: First, you establish the necessary environment and preconditions for executing the test cases in the test suite. This involves initializing the system or component under test, setting up databases or other resources, configuring dependencies, and preparing the initial state of the system.
+        - Define the test suite: Once the test fixture is set up, you can define the test suite. A test suite is a logical grouping of test cases that collectively test different aspects or functionalities of the system. The test suite may cover different scenarios, edge cases, or specific features of the system.
+        -By following this order, you ensure that the test fixture is properly set up before defining the test suite. This allows each test case within the suite to start from a consistent and known state, ensuring reliable and repeatable test results.
+
+2. What comes first test suites or test doubles?
+    - In software testing, test doubles are typically introduced before creating test suites. Here's the order of usage for these terms:
+    - Test Doubles: Test doubles are objects or components that simulate the behavior of real dependencies or collaborators of the system under test. They are used to isolate the component being tested and remove dependencies on external systems or components. Examples of test doubles include stubs, mocks, fakes, and dummies.
+    - Test Suites: A test suite is a collection or group of test cases that are designed to be executed together. It consists of multiple related test cases that verify different aspects or functionalities of a system or component. Test suites are created to achieve comprehensive coverage of the system and address various scenarios and conditions.
+    - The order of usage is typically as follows:
+    - Introduce test doubles: First, you introduce test doubles to simulate the behavior of real dependencies or collaborators. Test doubles help isolate the component under test and control the behavior of external systems or components. By using test doubles, you can create controlled and predictable test environments.
+    - Create test suites: Once the necessary test doubles are in place, you can create test suites. Test suites are logical groupings of test cases that collectively test different aspects or functionalities of the system. The test suite may cover different scenarios, edge cases, or specific features of the system.
+    - By following this order, you establish the test doubles first to isolate the component and control its dependencies. Then, you organize the related test cases into test suites, allowing for comprehensive coverage of the system while leveraging the test doubles to provide controlled test environments.
+
+# To summarize, the standard order for testing a Vue component would be:
+    - Set up the test fixture.
+    - Introduce any necessary test doubles.
+    - Define test suites to group related test cases.
+    - Define individual test cases within each test suite.
+
+3. When do we need test doubles in ut?
+4. How to list and order the test cases for component test cases?
+5. Can we have mutiple assertion in one test case?
+    - yes
