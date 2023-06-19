@@ -1,7 +1,7 @@
 # Test doubles:
     - In the context of component testing, "test doubles" are objects or implementations used as replacements for real dependencies of a component during testing.
     - Test doubles mimic|replace|simulate the behavior of the real dependencies but allow for more control and isolation in the testing environment.
-    - Mocks, Stubs, Spies, Fakes
+    - Test doubles technique: Mocks, Stubs, Spies, Fakes, Dummies
 
 # Real dependencies:
     - In the context of testing, "real dependencies" refer to the actual external components, services, or modules that a unit under test interacts with
@@ -14,3 +14,8 @@
     - External libraries: Axios, Moment.js, loadash, charting libraries, date pickers, rich text editors
     - Custome Servies or Utiities: api servies, validation servies,
 
+# Therefore use test doubles only for real dependecies of a component. Now you should be able to distinguish what is and what is not real dependencies of a component.
+
+Q. What is and what is not real dependencies of a component?
+Q. What testDoubles technique to be use for a particular type of real dependencies.
+Q. Is slot real dependecies or not?
