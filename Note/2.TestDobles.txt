@@ -4,18 +4,24 @@
     - Test doubles technique: Mocks, Stubs, Spies, Fakes, Dummies
 
 # Real dependencies:
-    - In the context of testing, "real dependencies" refer to the actual external components, services, or modules that a unit under test interacts with
+    - In the context of testing, "real dependencies" refer to the actual external components, services, or modules that a unit under test interacts with.
     - These dependencies are typically implemented separately and are not part of the unit being tested.
     - Real dependencies of a component ==> Database access components, Web service APIs, File system interactions, Network communication modules, External libraries or frameworks, Hardware devices
 
 # Real dependencies in case of Vue:
-    - Brpwser APIs: fetch api, Geolocation API, localStorage, sessionStorage, DOM 
+    - Browser APIs: fetch api, Geolocation API, localStorage, sessionStorage, DOM 
     - Vue Plugins: Vue i18n, Vue Router, Vuex Store, Vue Select
     - External libraries: Axios, Moment.js, loadash, charting libraries, date pickers, rich text editors
     - Custome Servies or Utiities: api servies, validation servies,
 
-# Therefore use test doubles only for real dependecies of a component. Now you should be able to distinguish what is and what is not real dependencies of a component.
+# Therefore use test doubles only for real dependecies of a component.
+    > Before that you should be able 
+        - to distinguish what is and what is not real dependencies of a component.
+        - to what test doubles technique should i use in replacement of particular dependecies.
 
 Q. What is and what is not real dependencies of a component?
 Q. What testDoubles technique to be use for a particular type of real dependencies.
 Q. Is slot real dependecies or not?
+Q. What test doubles technique should i use in replacement of vue store?
+
+manual mock/stubs or package/sinon mock.stubs.

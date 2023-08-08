@@ -6,7 +6,7 @@
 
 # Test Runner:
     - A test runner is a tool or framework that executes tests and provides various features for running and organizing tests, such as executing test suites, generating test reports, and handling test configurations.
-    - Popular test runners for Vue.js include Jest, Mocha, Ava, and Karma.
+    - Popular test runners for Vue.js include Jest, Mocha, Jasmine, Ava, and Karma.
 
 - Assertion module: assert
 - Assertion library: chai
@@ -30,10 +30,23 @@
 
 - Assertions: Assertions are statements or conditions that check whether a certain condition or expectation holds true during a test. They are used to validate the behavior and output of the component being tested. Common assertion libraries used in Vue.js testing include Jest's expect and Chai's assertion library.
 
-- Mocking: Mocking involves creating dummy implementations or replacements for external dependencies, such as APIs, services, or child components, in order to isolate the component being tested. Mocking allows you to control the behavior and responses of these dependencies during testing.
-
 - Mounting: Mounting refers to the process of rendering a component and its child components in a test environment. It sets up the component hierarchy and makes it available for testing. In Vue, this is typically done using mounting functions provided by testing libraries like Vue Test Utils.
 
 - Shallow mounting means that only the component being tested is rendered, and its child components are replaced with stubs (dummy components). This allows you to isolate the component under test and focus on its behavior without considering the implementation details of its child components.
 
+- Mocking: Mocking involves creating dummy implementations or replacements for external dependencies, such as APIs, services, or child components, in order to isolate the component being tested. Mocking allows you to control the behavior and responses of these dependencies during testing.
+
 - Snapshot Testing:
+
+
+- describe(... ) ===> test suites
+- it(... ) / test(... ) ===> test cases
+- expect(... ) / should(... ) ===> assetertion
+
+describe(...): Test Suite - Used to group related test cases together. Provides a higher-level description of the tests you're about to run.
+it(...) or test(...): Test Case - Defines an individual test that verifies a specific behavior or aspect of your code. Contains test logic and assertions.
+expect(...): Test Assertion - Used within a test case to define what the expected outcome of a test should be. It's where you specify what you anticipate to be true about the behavior you're testing.
+
+- fixture: A test fixture is the preparation and environment setup that ensures your code is in a known state before running a test
+
+-  While it's generally recommended to have a single assertion per test case for clarity and focused testing, there are situations where having multiple assertions within a single test case can be reasonable and effective.
