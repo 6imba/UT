@@ -1,0 +1,49 @@
+beforeEach vs beforeAll
+afterEach vs afterAll
+
+
+> afterEach:
+    - to perform cleanup or teardown actions after each individual test case within a test suite.
+    - It's used to ensure that any resources or changes made during a test case are properly reset or cleaned up before the next test case is executed.
+    - to reset or clean up resources after each test case.
+    - to define code that needs to run after each test case in a test suite, regardless of whether the test case passes or fails.
+    - the code specified in afterEach are isolated to each test case
+    - runs after the test case it's associated with
+    - to clean up any changes made during a test case, release resources, restore the environment, or perform any other necessary cleanup actions.
+    > to unmount the component 
+
+> afterAll:
+    - to perform cleanup or teardown actions once after all the test cases within a test suite have been executed.
+    - to ensure that any shared resources or changes made during the entire test suite are properly reset or cleaned up.
+    - to release the expensive resource after all the test cases in the suite have executed. 
+    - to define code that needs to run after all the test cases in a test suite have been executed.
+    - runs only once, after all the test cases have completed.
+    - to clean up shared resources, close connections, release any global state, or perform any other necessary cleanup actions that need to be done only once after the entire test suite.
+    - ensures that the shared resource is properly cleaned up and released once, preventing any potential resource leaks.
+    - it helps ensure that the testing environment is left in a clean and consistent state.
+
+
+- is unMounting a component an expensive action or not?
+
+Q. So simply we need to keep expensive action in beforeAll and afterAll where as inexpensive action in beforeEach and afterEach?
+    - beforeAll: Use this hook for expensive setup actions that need to be performed only once before any test case runs within a test suite. These actions are shared among all test cases in the suite.
+    - beforeEach: Use this hook for common setup actions that need to be performed before each individual test case. These actions are isolated to each test case, ensuring a clean and consistent environment.
+    - afterEach: Use this hook for cleanup actions that need to be performed after each individual test case. These actions are isolated to each test case and help ensure that resources are properly released and the environment is cleaned up.
+    - afterAll: Use this hook for cleanup actions that need to be performed once after all test cases in a suite have been executed. These actions are shared among all test cases in the suite and help ensure that any shared resources are properly released. 
+
+Q. So simple we initialize test doubles inside hook right?
+    - Yes, that's correct. In Vue 3 unit testing, you can initialize test doubles (mocks, stubs, fakes, etc.) inside the test hooks (beforeEach, beforeAll) to create a controlled environment for your test cases.
+    - 
+    - beforeEach: Use the beforeEach hook to set up any test doubles, mock dependencies, or other common setup that needs to be performed before each individual test case. This ensures that each test case starts with a clean slate and isolated environment.
+    - beforeAll: Use the beforeAll hook to set up test doubles or mock dependencies that can be shared among all test cases within a test suite. This is suitable when the setup is relatively expensive or time-consuming and can be reused across multiple tests.
+    - 
+    - In this example, the createMockApi function initializes the test double for an API service. This test double is set up inside the beforeEach hook and can be used by all test cases within the test suite.
+    - By initializing test doubles within the appropriate test hooks, you ensure that your tests are well-organized, consistent, and focused on the behavior you are testing.
+
+can we initialize doubles out side hook? , if yes does mit make any sense? , if yes when is those senario appears?
+
+Q. If isolation is the fajor factor what if we plack test doubles inside test case aka it fcuntion? can we doo that if yes it is good approach?
+    - Yes, you can certainly define and initialize test doubles directly within individual test cases (it functions) in Vue 3 unit testing. This approach can provide maximum isolation for each test case, ensuring that the setup of one test case does not impact another. It can also make your tests more self-contained and easier to understand.
+    - However, keep in mind that this approach might result in some code duplication if you have similar test doubles across multiple test cases. If that becomes an issue, you can consider extracting shared setup into helper functions or using the beforeEach hook for more complex setups that are used across multiple test cases.
+
+# main concept: what action to be initialized in what hook is determined on the basis of factor, if its shareable? and  how much expensive it is ?
