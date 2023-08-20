@@ -1,0 +1,40 @@
+# Testing:
+    - unit
+    - snapShot
+    - e2e (cypress)
+    - integration
+    - smoke
+    - function
+    - performance
+    - acceptance
+
+# Testing statergy
+
+# Reference:
+    - https://www.youtube.com/watch?v=Jv2uxzhPFl4&t=220s
+
+
+I can see green tick in vscode on test case
+
+
+# jest global method:
+    .describe
+    .test
+    .only
+    .skip
+    .beforeEach
+    .beforeEach
+    .afterEach
+    .afterAll
+
+
+# test coverage: package.json
+    "scripts": {
+        "test": "jest --watch --coverage"
+    },
+    "jest": {
+        "collectCoverage": true,
+        "coverageReports": [
+        "html"
+        ]
+    }
