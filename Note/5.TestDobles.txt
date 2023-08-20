@@ -25,3 +25,8 @@ Q. Is slot real dependecies or not?
 Q. What test doubles technique should i use in replacement of vue store?
 
 manual mock/stubs or package/sinon mock.stubs.
+
+
+- Mocking in unit testing refers to the practice of creating simulated versions of certain components, objects, or services that a unit of code (such as a function or method) depends on.
+- Mocking in unit testing refers to the practice of creating simulated versions of certain components, objects, or services that a unit of code (such as a function or method) depends on. These simulated versions, known as mock objects or mocks, are used to isolate the unit of code being tested from the actual external dependencies. This allows you to test the unit of code in isolation, without needing to rely on or interact with real external systems.
+- can be the function's argument, return value, ...

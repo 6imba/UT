@@ -25,3 +25,8 @@
 4. How to list and order the test cases for component test cases?
 5. Can we have mutiple assertion in one test case?
     - yes
+
+6. So therefore we cannot say vue test utils is a test runner right, instead it uses other test runner for component testting. If yes what term can be used for vue test utils?
+    - You are correct; Vue Test Utils is not a test runner itself. Instead, it's a testing utility library specifically designed for testing Vue.js components. Vue Test Utils works in conjunction with external test runners like Jest, Mocha, or any other testing framework of your choice to facilitate the testing of Vue components.
+    - Here's a more accurate way to describe Vue Test Utils:
+    - Vue Test Utils is a testing utility library for Vue.js that provides methods and tools for mounting Vue components, interacting with them, and making assertions about their behavior. It is not a test runner but rather a library that complements test runners to enable effective unit and integration testing of Vue.js components.
