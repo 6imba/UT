@@ -1,0 +1,37 @@
+> const sum = (x,y) +=> x+y
+
+# saw example:
+    // arrage
+    const firstParam = 2
+    const secondParam = 3
+    const output = firstParam + secondParam // Question_1: how can this be geniun check we are just re-writingthe same logic again of which test is to be done. What if our logic is mistake? our test will get pass but functionality will fail but our UT will not catch as out ut arragne lofic is also mistake.
+    // act
+    const unit = sum(firstParam, secondParam)
+    // assert
+    expect(unit).toBe(output)
+
+# What i think: solution to Question_1:
+    // arrage
+    const firstParam = 2
+    const secondParam = 3
+    const output = 5 // Question_1_solution: hard write output
+    // act
+    const unit = sum(firstParam, secondParam)
+    // assert
+    expect(unit).toBe(output)
+
+# arragement:
+    - case level arragement: defined/initialize environment for particular test case--> doubles, constant variable, fucntion,... inside it/test block level
+    - suites level arragement: defined/initialize environment for particular test suites --> doubles, constant variable, fucntion,... inside describe_block, inside_hooks inside suite level
+    - file level global arragement: defined/initialize environment for particular test file --> doubles, constant variable, fucntion,... inside file at top level
+
+    > Declare variable, function, doubldes, other shared resources over a test file, outside describe_block. (global share resources)
+    > Declare variable, function, doubldes, other shared resources over a describe_block/test_suite, inside that particular describe_block/test_suite.
+    > Declare variable, function, doubldes, other not shared resources just used in a test case , inside that particular it_block/test_block/test_case.
+
+    # Declare variable, function, doubldes, other shared resources over a describe_block/test_suite, inside that particular describe_block/test_suite.
+        - but can use/access/modify global shared resources
+
+    > Declare variable, function, doubldes, other not shared resources just used in a test case , inside that particular it_block/test_block/test_case.
+        - but can use/access/modify global shared resources
+        - but can use/access/modify parent suite level shared resources

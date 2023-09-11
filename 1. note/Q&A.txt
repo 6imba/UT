@@ -30,3 +30,25 @@
     - You are correct; Vue Test Utils is not a test runner itself. Instead, it's a testing utility library specifically designed for testing Vue.js components. Vue Test Utils works in conjunction with external test runners like Jest, Mocha, or any other testing framework of your choice to facilitate the testing of Vue components.
     - Here's a more accurate way to describe Vue Test Utils:
     - Vue Test Utils is a testing utility library for Vue.js that provides methods and tools for mounting Vue components, interacting with them, and making assertions about their behavior. It is not a test runner but rather a library that complements test runners to enable effective unit and integration testing of Vue.js components.
+
+7. Let's suppose you stubbed ramda. And ramda removes that function in next version. Your unit tests will pass, how will you know something is broken in your product?
+   It's better unit test fail and you detect early. Do you still think we should mock ramda functions?
+   Same goes for JS inbuilt functions as well.
+    ==> so simply dont mock
+
+8. Do we need to replace function within same file and function from another file ?
+    -> replace the real implementation of function that has a more complex behavior that we want to control for testing purposes, while function whoch are straightforward doesn't need to be replaced.
+
+9. I have a helper file, which has four helper functions, now my query is do we need to write four test suite for all these four functions while writing unit test?
+   What if functions are interdependent?
+   What if functions are not dependent?
+   What if functions are complex or not?
+
+    -> write test suite for every individual utils function
+    -> replace the function that is invoke insdie another function while writing ut.
+
+10. I need to test function A, but A has function B called on it, B has function C called on it, , C has function D called on it. So do I need to replace B when writeing ut of A's ?
+
+11. Need to mock api request if a function whose ut we are writing has apin call inside it.
+
+- Simple replace dependencies that has complexity, has hight chance of failing.

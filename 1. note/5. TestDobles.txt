@@ -1,0 +1,92 @@
+# Test doubles:
+    - In the context of component testing, "test doubles" are objects or implementations used as replacements for real external dependencies of a component during testing.
+    - Test doubles mimic|replace|simulate the behavior of the real external dependencies but allow for more control and isolation in the testing environment.
+    - Test doubles technique: Mocks, Stubs, Spies, Fakes, Dummies
+    - sinon.js, jest is used for doubles
+
+# Real external dependencies:
+    - These dependencies are typically implemented separately and are not part of the unit being tested.
+    - In the context of testing, "real external dependencies" refer to the actual external components, services, modules , Database access components, Web service APIs, File system interactions, Network communication modules, External libraries or frameworks, Hardware devices that a unit under test interacts with.
+
+# Real dependencies in case of Vue:
+    - Browser APIs: fetch api, Geolocation API, localStorage, sessionStorage, DOM 
+    - Vue Plugins: Vue i18n, Vue Router, Vuex Store, Vue Select
+    - External libraries: Axios, Moment.js, loadash, charting libraries, date pickers, rich text editors
+    - Custome Servies or Utiities: api servies, validation servies,
+
+# Therefore use test doubles only for real external dependecies of a component.
+    > Before that you should be able 
+        - to distinguish what is and what is not real dependencies of a component.
+        - to what test doubles technique should i use in replacement of particular dependecies.
+
+Q. What is and what is not real dependencies of a component?
+Q. What testDoubles technique to be use for a particular type of real external dependencies.
+Q. Is slot real dependecies or not?
+Q. What test doubles technique should i use in replacement of vue store?
+
+- mock/stubs of dependecies manually or mock/stubs of dependecies by framework/package/sinon
+
+- Mocking in unit testing refers to the practice of creating simulated versions of certain components, objects, or services that a unit of code (such as a function or method) depends on.
+- These simulated versions, known as mock objects or mocks, are used to isolate the unit of code being tested from the actual external dependencies.
+- This allows you to test the unit of code in isolation, without needing to rely on or interact with real external systems.
+- Can be the function's argument, return value, ...???
+
+- stubs: replace specific functions or methods with controlled implementations.
+- mocks: replace entire objects, modules, or classes and specify expectations.
+- spies: spies when you want to observe function calls, check if they were called, and inspect their arguments.
+
+
+
+Q. Aren't these functions: .toLowerCase(), split(''), reverse(), join('') external dependencies and if yes shouldn't we stub or mock them?
+    You're absolutely correct. The functions .toLowerCase(), .split(''), .reverse(), and .join('') are JavaScript built-in functions and do not need to be stubbed or mocked because they are part of the core JavaScript language. These functions are not external dependencies that you typically need to replace or control during unit testing.
+    When writing unit tests, you usually focus on mocking or stubbing external dependencies, such as API calls, database queries, or interactions with external services. In this case, since the functions you're using are standard JavaScript methods, you can trust their behavior to be consistent and well-tested by the JavaScript runtime itself.
+    So, for a function like reverseString that relies on these built-in methods, you don't need to mock or stub them. Your unit tests can focus on testing the behavior of your own code, assuming that these standard functions work as expected.
+    However, if your function were to use external dependencies or make API requests, you would indeed use mocks or stubs to control or isolate those dependencies during testing.
+
+Q. What if among 4 function inside reverseString , toLowerCase is a custom function that I defined, is toLowerCase external dependenciy now?
+    If one of the functions inside reverseString is a custom function that you've defined, such as a custom toLowerCase function, then it becomes part of your internal codebase and is not considered an external dependency. In this case, you typically don't need to mock or stub your custom functions during unit testing because they are under your control.
+
+Q. So simple we just need to replace external dependencies? not internal dependencies
+    Yes, in unit testing, the primary focus is on replacing or isolating external dependencies while testing your internal code. External dependencies typically include things like external services, APIs, databases, and interactions with third-party libraries or modules that are outside your codebase.
+    Your internal dependencies, which are functions or components within your codebase that you have control over and are part of your project, are typically tested as part of your unit tests without the need for mocking or stubbing. You test them for correctness, ensuring they work as intended.
+
+Q. In unit testing, you want to isolate the function you are testing, which is function A in this case. To do that, you should replace function B because it's considered an external dependency for function A. The goal is to test function A in isolation from the behavior of function B.
+    - To replace function B, you can use various test double techniques depending on your specific testing needs:
+    - Stub: Use a stub to replace function B. A stub allows you to control the behavior of function B during the test. You can make it return predefined values or throw predefined errors to simulate different scenarios.
+    - Mock: A mock is similar to a stub but also includes expectations about how it should be called. You can use a mock to ensure that function A not only calls function B but also calls it with specific arguments and in a specific order. This is useful when you want to verify the interaction between the two functions.
+    - Fake: If function B interacts with external resources (like a database or API), consider using a fake. A fake is a simplified implementation of function B that doesn't rely on external resources but provides similar functionality. This allows you to isolate function A from any external dependencies.
+    - Dummy: If function B doesn't return any meaningful data but is required as an argument for function A, you can use a dummy function. A dummy function is a simple, empty function that satisfies the interface requirements but doesn't have any real implementation.
+    - The choice between these techniques depends on the specifics of your test case and what you want to achieve. If you simply want to control the return value of function B, a stub may be sufficient. If you want to ensure specific interactions, use a mock. If you need to eliminate external dependencies, consider a fake. If function B is just a required argument, a dummy function can be used.
+    - In summary, function B is an external dependency for function A in the context of unit testing, and you should replace it with an appropriate test double technique to isolate and test function A effectively.
+
+
+
+
+
+# This is a file_1:
+  func1(){}
+  func2(){
+    func1()
+  }
+  - If there func1() is just being used inside func2() of same file and not exported anywhere else, then no need to replace func1() while writing ut of func2().
+  
+  func1(){}
+  func2(){
+    func1()
+  }
+  func3(){
+    func1()
+  }
+  func4(){
+    func1()
+  }
+  func5(){
+    func1()
+  }
+  - So when writing UT of func2(),func3(),func4(),func5(), you dont have to replace func1() being called inside every fucntion of which ut's are getting written, because func1() is defined in same file.
+  - But since func1() is getting used by all function, so why dont we seperate it from this file to utils file, the we can import it in this file. In this case we need to write ut of func1() in utils file and replace it in ut of current file.
+
+Q. While writing the unit test of a function, never replace a core js pre defined  function or any other uitility libarry function, if used inside the function of which ut is getting written, as if any behaviour get changes in those function of core js and utility library, unit test fail will let us know and fix accordingly. Right?
+- Yes but sometime there might be a exceptional cases.
+- So that concludes none of custome_function(except utils function), core_pre-defined_function, external_libary_function are considered as real external dependecies.
+- That is correct. None of the functions you mentioned are considered as real external dependencies.

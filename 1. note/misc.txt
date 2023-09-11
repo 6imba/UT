@@ -4,9 +4,12 @@
     - e2e (cypress)
     - integration
     - smoke
+    - sanity
     - function
     - performance
     - acceptance
+    - manual
+    - system
 
 # Testing statergy
 
@@ -38,3 +41,5 @@ I can see green tick in vscode on test case
         "html"
         ]
     }
+
+- test callback

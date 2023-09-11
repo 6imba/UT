@@ -1,0 +1,12 @@
+const mainFunction = (list, callback) => {
+    let result = [];
+    list.forEach(element => {
+        if (element != 3) {
+            const res = callback(element)
+            result.push(res)
+        }
+    })
+    return result;
+}
+
+module.exports = mainFunction

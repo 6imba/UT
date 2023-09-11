@@ -1,3 +1,13 @@
+> vue_test_utils: Component testing utility library
+    > vitest: Test Runner
+        > nuxt vitest: Test Doubles library
+    > jest: Test Runner
+    > mocha: Test Runner
+        > sinon: Test Doubles library
+        > chai: Test Asserttion library
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Unit Testing:
     - Component Testing
     - Funtional Testing
@@ -53,6 +63,14 @@
         - A test case is a specific set of input values, execution conditions, and expected results that are designed to validate a particular aspect or behavior of a component.
         - It represents a single test scenario and typically focuses on testing a specific feature, function, or use case of the component.
         - A test case consists of steps to be executed, input values to be provided, and the expected outcomes.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# In test case:
+    - arrange: spy/stub/mock (arrange is done in fixture,suite,case)
+    - act: invoke what to be test
+    - assert (input_expect_methods & output_matcher_methods)
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
